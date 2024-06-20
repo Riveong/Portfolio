@@ -1,5 +1,5 @@
 <div class="banner">
-    <p class="lg:text-9xl text-7xl px-20 text-white ">Riveong</p>
+    <p class="lg:text-9xl text-7xl px-20 text-white text-center lg:text-left">Riveong</p>
     <p class="robotix">Software Engineer ● Fullstack Developer ● Mobile Developer ● UI / UX Designer  ● Backend Developer</p>
     </div>
     

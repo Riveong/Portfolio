@@ -1,11 +1,10 @@
-
 <div>
     <center><p class="robotix" style="background-color: black; color:white; padding:10px;">"There's Courage In Being Terrified, But Still Going Forward." -Karlach</p></center>
 </div>
-<div class="p-20">
+<div class="p-10 lg:p-20">
     <div class="flex">  
         <div class="w-1/2">
-            <h1 class="lg:text-8xl text-5xl">Who am I?</h1>
+            <h1 class="lg:text-8xl text-6xl">Who am I?</h1>
         </div>
         <div class="w-1/2"><p class="robotix"><b>Ong Gabriel Riverine Susanto</b> also known as Riveong is an undergraduate student at Sanata Dharma University (last semester!).</p></div>
     </div>
@@ -13,10 +12,10 @@
 
 </div>
 
-<div class="p-20">
+<div class="p-10 lg:p-20">
     <div class="flex">  
         <div class="w-1/2">
-            <h1 class="lg:text-8xl text-5xl">What do I do?</h1>
+            <h1 class="lg:text-8xl text-6xl">What do I do?</h1>
         </div>
         <div class="w-1/2"><p class="robotix">I do software engineering! I have done over <b>20+ projects</b>, here are the most notable projects I've finished.</p></div>
     </div>
@@ -153,6 +152,7 @@
 @media (max-width: 768px) {
     .grid-container {
         grid-template-columns: repeat(2, 1fr);
+        padding:30px;
     }
 }
 
