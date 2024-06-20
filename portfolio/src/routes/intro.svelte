@@ -1,7 +1,4 @@
-<script>
-        import saya from '$lib/assets/saya.png';
 
-</script>
 <div>
     <center><p class="robotix" style="background-color: black; color:white; padding:10px;">"There's Courage In Being Terrified, But Still Going Forward." -Karlach</p></center>
 </div>
