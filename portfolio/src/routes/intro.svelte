@@ -6,9 +6,9 @@
         <div class="w-1/2">
             <h1 class="lg:text-8xl text-6xl">Who am I?</h1>
         </div>
-        <div class="w-1/2"><p class="robotix"><b>Ong Gabriel Riverine Susanto</b> also known as Riveong is an undergraduate student at Sanata Dharma University (last semester!).</p></div>
+        <div class="w-1/2"><p class="robotix">I'm <b>Ong Gabriel Riverine Susanto</b> also known as Riveong. I'm an adventurous software engineer and also an ex 2023 Bangkit cohort.</p></div>
     </div>
-    <p class="robotix">I have a strong passion in software engineering I am a lover of tech all its wonders. I marvel at the power of Back-end dev, Mobile dev, UI/UX and the infinite possibilities it offers. I delight in learning new things and expanding my horizons. <b>I cherish writing, debugging, problem solving</b> as art forms of expression and creativity</p>
+    <p class="robotix">I have a strong passion in software engineering I am a lover of tech all its wonders. I marvel at the power of Back-end dev, Mobile dev, UI/UX and the infinite possibilities it offers. I delight in learning new things and expanding my horizons. <b>I cherish writing, debugging, problem solving, working under pressure</b> as art forms of expression and creativity.</p>
 
 </div>
 
@@ -72,6 +72,16 @@
     </div>
 
     <div class="grid-item">
+        <h1 class="text-3xl">Adivasa</h1>
+        <p style="font-size: 15px;">
+            A Website profile
+        </p>
+        <br>
+        <span class="category">Fullstack</span>
+        <a href="https://github.com/Riveong/Tailor-website">Visit Website</a>
+    </div>
+
+    <div class="grid-item">
         <h1 class="text-3xl">Penjahit Trend Tailor Semarang</h1>
         <p style="font-size: 15px;">
             A Tailor landing page website, made with HTML, CSS, JavaScript. Using Sveltekit as the framework, I made this Modern concept website.
@@ -88,13 +98,10 @@
         </p>
         <br>
         <span class="category">Fullstack</span>
-        <a href="https://github.com/Riveong/dox3">Visit Website</a>
+        <a href="https://github.com/Riveong/dox3">Visit Repository</a>
     </div>
 </div>
 </center>
-<div>
-    <center><p class="robotix" style="background-color: black; color:white; padding:10px; margin-bottom:50px;">/ / / Beep Beep! Construction is on going! Please wait for future contents / / /</p></center>
-</div>
 
 <style>
     .category{
