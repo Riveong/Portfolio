@@ -8,7 +8,7 @@
         </div>
         <div class="w-1/2"><p class="robotix">I'm <b>Ong Gabriel Riverine Susanto</b> also known as Riveong. I'm an adventurous software engineer and also an ex 2023 Bangkit cohort.</p></div>
     </div>
-    <p class="robotix">as a bachelor of informatics, I have a strong passion in software engineering I am a lover of tech all its wonders. I marvel at the power of Back-end dev, Mobile dev, UI/UX and the infinite possibilities it offers. I delight in learning new things and expanding my horizons. <b>I cherish writing, debugging, problem solving, working under pressure</b> as art forms of expression and creativity.</p>
+    <p class="robotix">as a bachelor of informatics, I have a strong passion in software engineering I am a lover of tech and all its wonders. I marvel at the power of Back-end dev, Mobile dev, UI/UX and the infinite possibilities it offers. I delight in learning new things and expanding my horizons. <b>I cherish writing, debugging, problem solving, working under pressure</b> as art forms of expression and creativity.</p>
 
 </div>
 
