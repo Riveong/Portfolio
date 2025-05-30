@@ -12,6 +12,6 @@ import Hero from "./hero.svelte";
 <Hero />
 <Intro />
 <Timeline />
-<Beep />
 <Contact />
+<Beep />
 <Footer />

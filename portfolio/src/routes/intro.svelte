@@ -63,9 +63,49 @@
         linkText: "Visit Repository"
       }
     ];
-  </script>
+
+    // Experience data
+    const experiences = [
+      {
+        company: "PT. Sukanda Djaya - PT. Diamond Food Indonesia",
+        position: "Fullstack Developer - Corporate Training and Development Staff",
+        duration: "2024-2025",
+        location: "Full Time, Cibitung, Bekasi, Indonesia",
+        description: "Developing, deploying, and maintaining internal custom applications for HR department. Facilitating Training sessions and acting as the master of ceremonies for training sessions.",
+        achievements: [
+          "Developed a web-based product knowledge exam app with gamification features for employees.",
+          "Created an internal web-based image-sharing application (Instagram like app) for 5R implementation.",
+          "Integrated the 5R app with a CMS developed by another department.",
+          "Created and integrate donation website to spreadsheet data on google sheet via api.",
+          "Contributed to a 25% increase in automation efficiency.",
+          "Became 5R auditor for the company, ensuring compliance with 5R standards.",
+          "Became a Master of Ceremony for training sessions, enhancing employee engagement.",
+          "Participated as a team building committee member, organizing team-building events and activities.",
+        ],
+        technologies: ["Reactjs", "Expressjs" , "Python", "FastAPI", "Svelte", "Google Sheets API", "JavaScript", "HTML/CSS", "SQLite", "Public Speaking", "Team Building"]
+      },
+      {
+        company: "Bangkit Academy",
+        position: "Cloud Computing & Mobile Development Cohort",
+        duration: "2023-2024",
+        location: "Remote",
+        description: "Participated in Google's Bangkit Academy program, focusing on Cloud Computing, Backend development, and mobile development. Worked on capstone projects and gained hands-on experience with cloud technologies. Successfully completed the program with distinction.",
+        technologies: ["Python", "TensorFlow", "Google Cloud Platform", "Machine Learning", "Android", "Kotlin"]
+      },
+      {
+        company: "Freelance",
+        position: "Full Stack Developer",
+        duration: "2020 - Present",
+        location: "Remote",
+        description: "Developed various web applications and mobile solutions for clients. Created e-commerce platforms, business websites, and custom applications using modern frameworks.",
+        technologies: ["Svelte", "React", "Express", "Android", "FastAPI", "JavaScript", "HTML/CSS", "Databases (SQL, NoSQL, SUPABASE)"]
+      }
+    ];
+
+    let activeTab = 'projects'; // Default tab
+</script>
   
-  <div>
+<div>
     <div class="quote-banner">
       <p class="robotix text-white">"There's Courage In Being Terrified, But Still Going Forward." -Karlach</p>
     </div>
@@ -94,35 +134,90 @@
               <h1 class="section-title">What do I do?</h1>
             </div>
             <div class="flex-item-right">
-              <p class="robotix mb-8">I do software engineering! I have done over <b>100+ projects</b>, here are the most notable projects I've finished.</p>
+              <p class="robotix mb-8">I do software engineering! I have done over <b>100+ projects</b>, here are my most notable works and experiences.</p>
             </div>
           </div>
-          
-          <div class="projects-grid">
-            {#each projects as project}
-              <div class="project-card">
-                {#if project.imageUrl}
-                  <img 
-                    src={project.imageUrl} 
-                    alt={project.title} 
-                    class="project-image {project.isRounded ? 'rounded' : ''}"
-                  />
-                {/if}
-                <h2 class="project-title">{project.title}</h2>
-                <p class="project-description">{project.description}</p>
-                <div class="project-footer">
-                  <span class="category-tag">{project.category}</span>
-                  <a href={project.link} class="project-link">{project.linkText}</a>
-                </div>
-              </div>
-            {/each}
+
+          <!-- Tab Navigation -->
+          <div class="tab-navigation">
+            <button 
+              class="tab-btn {activeTab === 'projects' ? 'active' : ''}"
+              on:click={() => activeTab = 'projects'}
+            >
+              Projects
+            </button>
+            <button 
+              class="tab-btn {activeTab === 'experiences' ? 'active' : ''}"
+              on:click={() => activeTab = 'experiences'}
+            >
+              Experiences
+            </button>
           </div>
+          
+          <!-- Projects Tab Content -->
+          {#if activeTab === 'projects'}
+            <div class="projects-grid">
+              {#each projects as project}
+                <div class="project-card">
+                  {#if project.imageUrl}
+                    <img 
+                      src={project.imageUrl} 
+                      alt={project.title} 
+                      class="project-image {project.isRounded ? 'rounded' : ''}"
+                    />
+                  {/if}
+                  <h2 class="project-title">{project.title}</h2>
+                  <p class="project-description">{project.description}</p>
+                  <div class="project-footer">
+                    <span class="category-tag">{project.category}</span>
+                    <a href={project.link} class="project-link">{project.linkText}</a>
+                  </div>
+                </div>
+              {/each}
+            </div>
+          {/if}
+
+          <!-- Experiences Tab Content -->
+          {#if activeTab === 'experiences'}
+            <div class="experiences-container">
+              {#each experiences as experience}
+                <div class="experience-card">
+                  <div class="experience-header">
+                    <h3 class="experience-position">{experience.position}</h3>
+                    <div class="experience-meta">
+                      <span class="experience-company">{experience.company}</span>
+                      <span class="experience-location">{experience.location}</span>
+                    </div>
+                    <span class="experience-duration">{experience.duration}</span>
+                  </div>
+                  <p class="experience-description">{experience.description}</p>
+                  
+                  {#if experience.achievements}
+                    <div class="achievements-section">
+                      <h4 class="achievements-title">Key Achievements:</h4>
+                      <ul class="achievements-list">
+                        {#each experience.achievements as achievement}
+                          <li class="achievement-item">{achievement}</li>
+                        {/each}
+                      </ul>
+                    </div>
+                  {/if}
+
+                  <div class="experience-technologies">
+                    {#each experience.technologies as tech}
+                      <span class="tech-tag">{tech}</span>
+                    {/each}
+                  </div>
+                </div>
+              {/each}
+            </div>
+          {/if}
         </div>
       </div>
     </section>
-  </div>
+</div>
   
-  <style>
+<style>
     :global(*) {
       margin: 0;
       padding: 0;
@@ -179,6 +274,38 @@
       font-weight: 400;
       font-size: 1.25rem;
       line-height: 1.8;
+    }
+
+    /* Tab Navigation Styles */
+    .tab-navigation {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 2rem;
+      border: 2px solid #333;
+      background: transparent;
+      color: #333;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: "DM Mono", monospace;
+    }
+
+    .tab-btn:hover {
+      background: #333;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .tab-btn.active {
+      background: #333;
+      color: white;
     }
     
     .projects-grid {
@@ -255,6 +382,117 @@
     .project-link:hover {
       opacity: 0.9;
     }
+
+    /* Experiences Styles */
+    .experiences-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .experience-card {
+      background-color: #f8f8f8;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .experience-header {
+      margin-bottom: 1rem;
+    }
+
+    .experience-position {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #333;
+    }
+
+    .experience-meta {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .experience-company {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .experience-location {
+      color: #666;
+    }
+
+    .experience-duration {
+      color: #888;
+      font-size: 0.9rem;
+      font-family: "DM Mono", monospace;
+    }
+
+    .experience-description {
+      color: #666;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* Achievements Styles */
+    .achievements-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .achievements-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.75rem;
+      font-family: "DM Mono", monospace;
+    }
+
+    .achievements-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .achievement-item {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #555;
+      line-height: 1.5;
+      font-size: 0.9rem;
+    }
+
+    .achievement-item::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .experience-technologies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .tech-tag {
+      background-color: #333;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
     
     /* Media queries for responsiveness */
     @media (max-width: 992px) {
@@ -288,6 +526,16 @@
       .projects-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       }
+
+      .tab-navigation {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .experience-meta {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
     }
     
     @media (max-width: 480px) {
@@ -302,6 +550,19 @@
       
       .projects-grid {
         grid-template-columns: 1fr;
+      }
+
+      .experience-card {
+        padding: 1.5rem;
+      }
+
+      .achievement-item {
+        font-size: 0.85rem;
+        padding-left: 1.25rem;
+      }
+
+      .achievements-title {
+        font-size: 1rem;
       }
     }
   </style>
